@@ -47,7 +47,7 @@ public class ComplexNumber {
                 text += (this.imaginaryNumber > 0 ? "+":"") + this.imaginaryNumber + "i";
             }
         }
-        text += " ".repeat(7 - text.length());
+        text += " ".repeat(9 - text.length());
         System.out.print(text);
     }
 }
