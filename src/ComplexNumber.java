@@ -37,10 +37,17 @@ public class ComplexNumber {
 
     // Output values
     public void printValue(){
-        String text = "" + this.realNumber;
-        if(this.imaginaryNumber != 0){
-            text += (this.imaginaryNumber > 0 ? "+":"") + this.imaginaryNumber + "i";
+        String text = "";
+
+        if(this.realNumber == 0){
+            text += this.imaginaryNumber == 0 ? "0":this.imaginaryNumber + "i";
+        }else{
+            text += this.realNumber;
+            if(imaginaryNumber != 0){
+                text += (this.imaginaryNumber > 0 ? "+":"") + this.imaginaryNumber + "i";
+            }
         }
-        System.out.println(text);
+        text += " ".repeat(7 - text.length());
+        System.out.print(text);
     }
 }
