@@ -1,3 +1,4 @@
+package lab_01;
 public class Matrix {
     int x, y;
     ComplexNumber[][] arr;
@@ -14,8 +15,8 @@ public class Matrix {
         for(int i=0; i<this.x; i++){
             for(int j=0; j<this.y; j++){
                 // Fill randomly with max 2-digit numbers
-                int complexNum = complex ? (int)(Math.random()*10):0;
-                this.arr[i][j] = new ComplexNumber((int)(Math.random()*10),complexNum);
+                double complexNum = complex ? Math.round(Math.random()*10):0;
+                this.arr[i][j] = new ComplexNumber(Math.round(Math.random()*10),complexNum);
             }
         }
     }
@@ -54,7 +55,6 @@ public class Matrix {
     public void multiplyMatrix(Matrix a){
         // check if sizes are acceptable
         if(this.y == a.x){
-            int temp_sum = 0;
             ComplexNumber[][] newArr = new ComplexNumber[this.x][a.y];
             for(int i=0; i<this.x; i++){
                 for(int j=0; j<a.y; j++){
@@ -72,7 +72,6 @@ public class Matrix {
             System.out.println(this.x + "x" + this.y + " vs. "+ a.x + "x" + a.y);
         }
     }
-
 
     // Transpose matrix
     public void transposeMatrix(){
@@ -98,4 +97,49 @@ public class Matrix {
         }
     }
 
+    // Determinant
+    public ComplexNumber recursiveDet(ComplexNumber[][] arr, int size){
+        if(size == 1){
+            return arr[0][0];
+        }
+        int newSize = size-1;
+        ComplexNumber det = new ComplexNumber(0,0);
+        for(int i=0; i<size; i++){
+            if(arr[0][i].realNumber == 0 && arr[0][i].imaginaryNumber == 0){
+                continue;
+            }
+            ComplexNumber[][] newArr = new ComplexNumber[newSize][newSize];
+            int x=0, y=0, step=0;
+            while(y < newSize){
+                while(x < newSize){
+                    if(y==i){
+                        step = 1;
+                    }
+                    newArr[x][y] = new ComplexNumber(0,0);
+                    newArr[x][y].addComplex(arr[x+1][y+step]);
+                    x++;
+                }
+                x=0;
+                y++;
+            }
+            // -1 if odd i%2
+            ComplexNumber multiplier = new ComplexNumber(1,0);
+            if(i%2 != 0){
+                multiplier.realNumber = -1;
+            }
+            multiplier.multiplyComplex(arr[0][i]);
+            multiplier.multiplyComplex(this.recursiveDet(newArr, newSize));
+            det.addComplex(multiplier);
+        }
+        return det;
+    }
+
+    public void determinantMatrix(){
+        // Check if matrix is square
+        if(this.x != this.y){
+            System.out.println("The matrix is not square (nxn), therefore determinant cannot be found!");
+        } else{
+            recursiveDet(this.arr, this.x).printValue();
+        }
+    }
 }
