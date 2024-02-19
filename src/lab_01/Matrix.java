@@ -10,13 +10,17 @@ public class Matrix {
         this.arr = new ComplexNumber[a][b];
     }
 
+    // Randomly decide if number is negative or positive
+    int signGen(){
+        return ((int)(Math.random()*10))%2 == 0 ? 1:-1;
+    }
     // randomly fill the matrix
-    public void randGenerateFill(boolean complex){
+    public void randGenerateFill(boolean complex, int range){
         for(int i=0; i<this.x; i++){
             for(int j=0; j<this.y; j++){
                 // Fill randomly with max 2-digit numbers
-                double complexNum = complex ? Math.round(Math.random()*10):0;
-                this.arr[i][j] = new ComplexNumber(Math.round(Math.random()*10),complexNum);
+                double complexNum = complex ? Math.round(Math.random()*range)*signGen():0;
+                this.arr[i][j] = new ComplexNumber(Math.round(Math.random()*range)*signGen(),complexNum);
             }
         }
     }
@@ -98,7 +102,7 @@ public class Matrix {
     }
 
     // Determinant
-    public ComplexNumber recursiveDet(ComplexNumber[][] arr, int size){
+    ComplexNumber recursiveDet(ComplexNumber[][] arr, int size){
         if(size == 1){
             return arr[0][0];
         }
