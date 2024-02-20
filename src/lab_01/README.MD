@@ -6,7 +6,7 @@ The task was to write Java Classes to work with Complex Numbers and Matrices wit
 **Complex Numbers (Methods):**
 - [Addition (addComplex)](https://github.com/atayev2012/java_course_2024/blob/main/src/lab_01/ComplexNumber.java#L21)
 - [Subtraction (subComplex)](https://github.com/atayev2012/java_course_2024/blob/main/src/lab_01/ComplexNumber.java#L26)
-- [Multiplication (multiplyComplex)](https://github.com/atayev2012/java_course_2024/blob/main/src/lab_01/ComplexNumber.java#L32)
+- [Multiplication (multiplyComplex)](https://github.com/atayev2012/java_course_2024/blob/main/src/lab_01/ComplexNumber.java#L33)
 - [Division (divideComplex)](https://github.com/atayev2012/java_course_2024/blob/main/src/lab_01/ComplexNumber.java#L40)
 
 **Matrices (Methods):**
