@@ -2,6 +2,16 @@ package lab_01;
 public class ComplexNumber {
     double realNumber, imaginaryNumber;
 
+    public ComplexNumber(){
+        this.realNumber = 0;
+        this.imaginaryNumber = 0;
+    }
+
+    public ComplexNumber(double r){
+        this.realNumber = r;
+        this.imaginaryNumber = 0;
+    }
+
     public ComplexNumber(double r, double i){
         this.realNumber = r;
         this.imaginaryNumber = i;
@@ -53,7 +63,7 @@ public class ComplexNumber {
                 text += String.format("%s%.0fi",(this.imaginaryNumber > 0 ? "+":""), this.imaginaryNumber);
             }
         }
-        text += "\t";
+        text += " ";
         System.out.print(text);
     }
 }
