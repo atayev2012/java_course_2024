@@ -53,7 +53,7 @@ public class Run {
         System.out.println("\n");
 
         System.out.println("Matrix operations:");
-        // Complex Numbers
+        // Matrices
         Matrix arr1 = new Matrix(3,3);
         Matrix arr2 = new Matrix(3,2);
         Matrix arr3 = new Matrix(3,3);

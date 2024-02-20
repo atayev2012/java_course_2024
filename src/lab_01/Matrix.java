@@ -63,9 +63,13 @@ public class Matrix {
             for(int i=0; i<this.x; i++){
                 for(int j=0; j<a.y; j++){
                     newArr[i][j] = new ComplexNumber(0,0);
+                    ComplexNumber temp = new ComplexNumber(0,0);
                     for(int k=0; k<this.y; k++){
-                        this.arr[i][k].multiplyComplex(a.arr[k][j]);
-                        newArr[i][j].addComplex(this.arr[i][k]);
+                        temp.addComplex(this.arr[i][k]);
+                        temp.multiplyComplex(a.arr[k][j]);
+                        newArr[i][j].addComplex(temp);
+                        temp.realNumber = 0;
+                        temp.imaginaryNumber = 0;
                     }
                 }
             }
