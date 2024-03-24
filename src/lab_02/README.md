@@ -1,7 +1,7 @@
 # Lab - 02: A-Z and a-z Letter Counter
 
 ## Description
-The task was to write Java program read data from file, count letters matching english alphabet and write the result of count in output file. Consider using exceptions:
+The task was to write Java program which reads data from file, counts letters matching english alphabet and writes the result of count in output file. Consider using exceptions:
 
 All methods were introduced in LetterCounter class.
 Code is run through Main.java
