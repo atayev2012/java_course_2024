@@ -60,7 +60,6 @@ public class LetterCounter {
                     System.err.println("Error: " + e);
                 }
             }
-            System.out.println("output status: " + outputStatus);
         }
     }
 

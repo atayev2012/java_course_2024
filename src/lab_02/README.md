@@ -10,7 +10,6 @@ Sample Output (Main.java) -> in terminal:
 ```
 Enter input file path: src/lab_02/input.txt
 Enter output file path: src/lab_02/output.txt
-output status: File Exists
 ===================Status===================
 Input file:		src/lab_02/input.txt - Available: File Exists
 Output file:	src/lab_02/output.txt - Available: File Exists
