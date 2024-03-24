@@ -3,8 +3,6 @@ package lab_02;
 import java.io.*;
 import java.util.Objects;
 import java.util.Scanner;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class LetterCounter {
     private String inputFilePath, outputFilePath;
@@ -70,7 +68,6 @@ public class LetterCounter {
     private void calculateLetters() throws IOException{
         File dataFile = new File(inputFilePath);
         String bufferString;
-        // check if file is readable '
         BufferedReader br = null;
         try{
             br = new BufferedReader(new FileReader(dataFile));
@@ -114,6 +111,8 @@ public class LetterCounter {
                     bw.write((char)(i+97) + " - " + lowerLetterCount[i] + "\n");
                 }
             }
+
+            bw.write("Total number of scanned characters: " + totalCharsScanned + "\nTotal number of matched characters: " + totalCharsMatched + "\n");
             System.out.println("Data was written to " + outputFilePath + " successfully!");
         }
         catch(IOException e){
@@ -127,7 +126,7 @@ public class LetterCounter {
     }
 
     private String generateMenu(){
-        String outputString = "Status:\n" +
+        String outputString = "===================Status===================\n" +
                 "Input file:\t\t" + inputFilePath + " - Available: " + inputStatus + "\n" +
                 "Output file:\t" + outputFilePath + " - Available: " + outputStatus + "\n\n" +
                 "Total Symbols scanned: " + totalCharsScanned + "\n" +
@@ -143,16 +142,27 @@ public class LetterCounter {
         return sc.nextLine();
     }
 
+    private void emptyData(){
+        for(int i=0; i<26; i++){
+            upperLetterCount[i] = 0;
+            lowerLetterCount[i] = 0;
+        }
+        totalCharsMatched = 0;
+        totalCharsScanned= 0;
+    }
+
     public void mainMenu() throws IOException {
         String command = "";
         while(!Objects.equals(command, "4")){
             if(inputFilePath.equals("Not introduced yet!") || (command.equals("1"))) {
                 requestFileName("input");
                 checkFileStatus("input");
+                emptyData();
                 command = "";
             }else if(outputFilePath.equals("Not introduced yet!") || (command.equals("2"))){
                 requestFileName("output");
                 checkFileStatus("output");
+                emptyData();
                 command = "";
             }else if(Objects.equals(command, "3")){
                 calculateLetters();
