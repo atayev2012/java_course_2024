@@ -40,5 +40,5 @@ Choose command number:
 Enter a command number: 4
 ```
 
-Sample input file: [input.txt](https://github.com/atayev2012/java_course_2024/blob/main/src/lab_02/input.txt)
-Sample output file: [output.txt](https://github.com/atayev2012/java_course_2024/blob/main/src/lab_02/output.txt)
+- Sample input file: [input.txt](https://github.com/atayev2012/java_course_2024/blob/main/src/lab_02/input.txt)
+- Sample output file: [output.txt](https://github.com/atayev2012/java_course_2024/blob/main/src/lab_02/output.txt)
