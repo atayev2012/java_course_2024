@@ -8,8 +8,8 @@ Code is run through Main.java
 
 Sample Output (Main.java) -> in terminal:
 ```
-Enter input file path: <code style="color : green">_src/lab_02/input.txt_</code>
-Enter output file path: <code style="color : green">_src/lab_02/output.txt_</code>
+Enter input file path: src/lab_02/input.txt
+Enter output file path: src/lab_02/output.txt
 output status: File Exists
 ===================Status===================
 Input file:		src/lab_02/input.txt - Available: File Exists
@@ -23,7 +23,7 @@ Choose command number:
 3. Calculate characters (A-Z, a-z)
 4. Exit
 
-Enter a command number: <code style="color : green">_3_</code>
+Enter a command number: 3
 Data was written to src/lab_02/output.txt successfully!
 ===================Status===================
 Input file:		src/lab_02/input.txt - Available: File Exists
@@ -37,8 +37,8 @@ Choose command number:
 3. Calculate characters (A-Z, a-z)
 4. Exit
 
-Enter a command number: <code style="color : green">_4_</code>
+Enter a command number: 4
 ```
 
-Sample input file: 
-Sample output file: 
+Sample input file: [input.txt](https://github.com/atayev2012/java_course_2024/blob/main/src/lab_02/input.txt)
+Sample output file: [output.txt](https://github.com/atayev2012/java_course_2024/blob/main/src/lab_02/output.txt)
