@@ -109,18 +109,18 @@ public class Main {
             throw new WrongInputException("Год даты рождения должен быть числом!");
         }
 
-        int[] montlyDays = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        int[] monthlyDays = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
         if(dateThen[1].length() != 2 || monthThen < 1 || monthThen > 12){
             throw new WrongInputException("Месяц даты рождения введен неправильно!\nМесяц должен быть от 01 до 12!");
         }
 
         if(monthThen == 2 && yearThen%4 == 0){
-            montlyDays[monthThen] = 29;
+            monthlyDays[monthThen] = 29;
         }
 
-        if(dayThen < 1 || dayThen > montlyDays[monthThen]){
-            throw new WrongInputException("День даты рождения введен непарвильно!\nДень в месяце " + monthThen + " должен быть от 01 - " + montlyDays[monthThen] + "!");
+        if(dayThen < 1 || dayThen > monthlyDays[monthThen]){
+            throw new WrongInputException("День даты рождения введен непарвильно!\nДень в месяце " + monthThen + " должен быть от 01 - " + monthlyDays[monthThen] + "!");
         }
 
         int years = Integer.parseInt(dateNow[2]) - Integer.parseInt(dateThen[2]);
