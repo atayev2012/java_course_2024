@@ -3,7 +3,7 @@
 ## Description
 The task was to write Java program which will ask for input of last name, first name, middle name and date of birth. Full names will be in russian language. Output should contain last name with initials, gender and age. 
 
-<u>**It is considered that all input data will be provided correctly.**</u>
+<u>**Input dat validation(exceptions) are included**</u>
 
 - Last name
 - First name
