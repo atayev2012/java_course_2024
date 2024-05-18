@@ -12,15 +12,16 @@ public class Main {
         programTerminator();
     }
 
-    public static void placeElevators(int elevatorQty, int peopleQty) {
-        elevators = new Elevator[elevatorQty];
-        for (int i = 0; i < elevatorQty; i++) {
-            Elevator newElevator = new Elevator(i + 1, totalFloors, peopleQty);
-            elevators[i] = newElevator;
-
-            Thread thread = new Thread(newElevator);
-            thread.start();
-        }
+    // listen for ENTER to exit the program
+    private static void programTerminator() {
+        Thread listener = new Thread(() -> {
+            try {
+                System.in.read();
+            } catch (Exception ignored) {
+            }
+            System.exit(0);
+        });
+        listener.start();
     }
 
     public static void randomPassengerGenerator() {
@@ -42,16 +43,15 @@ public class Main {
         generator.start();
     }
 
-    // listen for ENTER to exit the program
-    private static void programTerminator() {
-        Thread listener = new Thread(() -> {
-            try {
-                System.in.read();
-            } catch (Exception ignored) {
-            }
-            System.exit(0);
-        });
-        listener.start();
+    public static void placeElevators(int elevatorQty, int peopleQty) {
+        elevators = new Elevator[elevatorQty];
+        for (int i = 0; i < elevatorQty; i++) {
+            Elevator newElevator = new Elevator(i + 1, totalFloors, peopleQty);
+            elevators[i] = newElevator;
+
+            Thread thread = new Thread(newElevator);
+            thread.start();
+        }
     }
 
 }
